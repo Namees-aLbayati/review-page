@@ -10,69 +10,39 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
     <title>Namees ExpressJS</title>
 </head>
-<body class="bg-warning">
-<h2 id="fh2">WE APPRECIATE YOUR REVIEW!</h2>
-<h6 id="fh6" class="text-center">Your review will help us to improve our web hosting quality products, and customer services.</h6>
+<body style="background-image:url('./photo-1475274047050-1d0c0975c63e.avif');">
 
-
-<form id="feedback" action="">
-  <div class="pinfo">Users personal info</div>
-  
-<div class="form-group">
-  <div class="col-md-4 inputGroupContainer">
-  <div class="input-group">
-  <span class="input-group-addon"><i class="fa fa-user"></i></span>
-  <input  name="name" id="nameId" placeholder="John Doe" class="form-control"  type="text">
-    </div>
-  </div>
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="/reviewpage">Add your review </a>
+  <a href="/advice">Developers Advices</a>
+  <a href="#">Clients</a>
+  <a href="#">Contact</a>
 </div>
+<h2 style="text-align:center;background: linear-gradient(to right, #f32170,
+#ff6b08, #cf23cf, #eedd44);
+-webkit-text-fill-color: transparent;
+-webkit-background-clip: text;">FrontEnd-Backend setup sections </h2>
+<p style="text-align:center;background: linear-gradient(to right, #f32170,
+#ff6b08, #cf23cf, #eedd44);
+-webkit-text-fill-color: transparent;
+-webkit-background-clip: text;">Click on the element below to open the side navigation menu.</p>
+<span style="font-size:30px;cursor:pointer;background: linear-gradient(to right, #f32170,
+#ff6b08, #cf23cf, #eedd44);
+-webkit-text-fill-color: transparent;
+-webkit-background-clip: text;" onclick="openNav()">&#9776; open</span>
 
-<div class="form-group">
-  <div class="col-md-4 inputGroupContainer">
-  <div class="input-group">
-  <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
-    <input name="email" id="emailId" type="email" class="form-control" placeholder="john.doe@yahoo.com">
-     </div>
-  </div>
-</div>
+<script>
+function openNav() {
 
+  document.getElementById("mySidenav").style.width = "350px";
+}
 
- <div class="pinfo">Rate our overall services.</div>
-  
-
-<div class="form-group">
-  <div class="col-md-4 inputGroupContainer">
-  <div class="input-group">
-  <span class="input-group-addon"><i class="fa fa-heart"></i></span>
-   <select class="form-control" id="rateId">
-      <option value="1star">1</option>
-      <option value="2stars">2</option>
-      <option value="3stars">3</option>
-      <option value="4stars">4</option>
-      <option value="5stars">5</option>
-    </select>
-    </div>
-  </div>
-</div>
-
- <div class="pinfo">Write your feedback.</div>
-  
-
-<div class="form-group">
-  <div class="col-md-4 inputGroupContainer">
-  <div class="input-group">
-  <span class="input-group-addon"><i class="fa fa-pencil"></i></span>
-  <textarea class="form-control" id="reviewId" rows="3"></textarea>
- 
-    </div>
-  </div>
-</div>
-
- <button type="submit" id="submitId" class="btn btn-primary">Submit</button>
-
-
-</form>
-</section>
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+}
+</script>
+   
 <script src="./scripts/script.js"></script>
     
 </body>

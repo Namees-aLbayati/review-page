@@ -61,6 +61,12 @@ const newReview={
         id:uuidVal
     });
 })
+app.get('/reviewpage',(req,res)=>{
+  res.sendFile(path.join(__dirname,('./public/pages/review.html')))
+})
+app.get('/advice',(req,res)=>{
+  res.sendFile(path.join(__dirname,('./public/pages/advices.html')))
+})
 
 app.listen(PORT,()=>{
     console.log('listening')

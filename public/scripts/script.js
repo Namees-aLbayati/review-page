@@ -28,7 +28,7 @@ document.getElementById('submitId').addEventListener('click',(e)=>{
     }
   fetchData(userData).then((d)=>{
     console.log(d.id)
-window.alert(`${d.id} has been added `)  }).catch((err)=>{
+window.alert(`ID: ${d.id} has been added to your review,your review will be so helpful to improve our products!!!Thanks! `)  }).catch((err)=>{
     console.log(err)
   })
 
