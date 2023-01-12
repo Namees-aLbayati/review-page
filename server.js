@@ -8,10 +8,11 @@ const uuid = require('./helpers/uuid');
 const liveReloadServer=livereload.createServer();
 var publicdir=path.join(__dirname,'public');
 liveReloadServer.watch(publicdir)
+var routes=require('./routes/index')
 app.use(connectLivereload());
 var dataArr=[]
 var fs=require('fs')
-
+app.use(routes)
 app.use(express.static('public'));
 app.use(express.json())
 app.use(express.urlencoded({extended:true}));
@@ -67,6 +68,8 @@ app.get('/reviewpage',(req,res)=>{
 app.get('/advice',(req,res)=>{
   res.sendFile(path.join(__dirname,('./public/pages/advices.html')))
 })
+
+
 
 app.listen(PORT,()=>{
     console.log('listening')

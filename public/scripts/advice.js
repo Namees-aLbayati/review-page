@@ -1,20 +1,21 @@
-const { json } = require("express");
 
 const tipEl=document.getElementById('tipText');
 const nameEl=document.getElementById('tipUsername');
 
-const postData=(data)=>{
+const postData=(data)=>
     fetch('/api/advice',{
         method:'POST',
         headers:{
-            'content-Type':'application/json'
+            'Content-Type':'application/json'
         },
         body:JSON.stringify(data)
 
-    }).then((res)=>res.json()).then((result)=>{
-        console.log('result ',result)
-    })
-}
+    }).then((res)=>res.json()).then((data)=>{
+
+
+    }).catch((err)=>{
+throw err    })
+
 
 document.getElementById('tip-form').addEventListener('submit',(e)=>{
 e.preventDefault()
@@ -23,5 +24,5 @@ e.preventDefault()
     username:nameEl.value.trim()
 }
 console.log(userInput)
-
+postData(userInput)
 })
