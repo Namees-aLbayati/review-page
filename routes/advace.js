@@ -1,6 +1,9 @@
 const router=require('express').Router();
-router.post('/advice',(req,res)=>{
-    console.log('post is firing here')
-    res.json({status:200,message:'success'})
+const {readFromFile,readAndAppend}=require('../helpers/util')
+
+    router.get('/advice',(req,res)=>{
+        readFromFile('./db/advice.json').then((data) =>{
+    res.json(JSON.parse(data))})
+
     })
     module.exports=router
