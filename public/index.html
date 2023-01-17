@@ -1,49 +1,124 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./styles/style.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./styles/style.css">
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
-    <title>Namees ExpressJS</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+    crossorigin="anonymous"></script>
+  <title>Namees ExpressJS</title>
 </head>
-<body style="background-image:url('./photo-1475274047050-1d0c0975c63e.avif');">
 
-<div id="mySidenav" class="sidenav">
-  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  <a href="/reviewpage">Add your review </a>
-  <a href="/advice">Developers Advices</a>
-  <a href="/chat">Chat</a>
-  <a href="#">Contact</a>
+<body class="bodyEl">
+
+  <header class="d-flex flex-column mb-3">
+
+ 
+  
+
+
+
+
+    <h2 style="text-align:center;background: linear-gradient(to right, #f32170,
+  #ff6b08, #cf23cf, #eedd44);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;">Namees Albayati | Junior Full stack web developer </h2>
+    <p style="text-align:center;background: linear-gradient(to right, #f32170,
+  #ff6b08, #cf23cf, #eedd44);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;">Click on the element below to open the side navigation menu.</p>
+  </div>
+
+  <div>
+    <div id="mySidenav" class="sidenav">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <a href="/reviewpage">Add your review </a>
+      <a href="/advice">Developers Advices</a>
+      <a href="/chat">Chat</a>
+      <a href="#">Contact</a>
+    </div>
+    <span style="font-size:30px;cursor:pointer;background: linear-gradient(to right, #f32170,
+#ff6b08, #cf23cf, #eedd44);
+-webkit-text-fill-color: transparent;
+-webkit-background-clip: text;" onclick="openNav()">&#9776; More </span>
+
 </div>
-<h2 style="text-align:center;background: linear-gradient(to right, #f32170,
-#ff6b08, #cf23cf, #eedd44);
--webkit-text-fill-color: transparent;
--webkit-background-clip: text;">FrontEnd-Backend setup sections </h2>
-<p style="text-align:center;background: linear-gradient(to right, #f32170,
-#ff6b08, #cf23cf, #eedd44);
--webkit-text-fill-color: transparent;
--webkit-background-clip: text;">Click on the element below to open the side navigation menu.</p>
-<span style="font-size:30px;cursor:pointer;background: linear-gradient(to right, #f32170,
-#ff6b08, #cf23cf, #eedd44);
--webkit-text-fill-color: transparent;
--webkit-background-clip: text;" onclick="openNav()">&#9776; open</span>
 
-<script>
-function openNav() {
 
-  document.getElementById("mySidenav").style.width = "350px";
-}
 
-function closeNav() {
-  document.getElementById("mySidenav").style.width = "0";
-}
-</script>
-   
-<script src="./scripts/script.js"></script>
+  <p style="color: white;text-align: center;
+  text-shadow: 1px 1px 2px grey, 0 0 25px blue, 0 0 5px darkblue;" class="mt-5 align-item-center">
+    A full stack web developer based in Austin Texas. Passionate about building software that is meaningful and can improve our lives. Have a Bachlor's  degree in Information Technology | Communication Engineering and 1 years of previous experience as a Testing Engineer Focused on Finding a software's  functionality Bugs to optimizing efficiency.  I have earned a certificate in full stack web development from the University of Washington on May 2021, from which I gained knowledge and critical skills needed to build dynamic web applications and deploy them. Have worked on technologies like HTML5, CSS3, JavaScript,bootstrap, jQuery,Node.js,express.js, MySQL, MongoDB, Heroku, Express.js, React.js,npm packages. I am eager to utilize my technical skills and my strengths like problem solving, perseverance, planning and organization, and the ability to work well in a diverse team environment on every project I work on.
+
+  </p>
+ 
+
+
+</header>
+
+
+
     
+
+<div id="carouselExampleAutoplaying" class="carousel slide w-100 d-flex " 
+        data-bs-ride="carousel" style="height: 50vh;">
+
+
+        <div class="carousel-inner" class="w-50" id="container">
+
+         
+  
+
+         <div class="carousel-item active">
+          <img src="../public/images/event.png" class="d-block w-100 h-100" alt="...">
+         
+          <div class="carousel-caption d-none d-md-block">
+              <h5>Event Planner</h5>
+              <p class="bg-light">Event Planner was designed with the partier in mind, the one who wants to find fine dinning or a friend to have a good time. Event Planner is the easiest way for anyone to find an event to attend, create or host your own event or browse what's happening in your local area.</p>
+            </div>
+          </div>  
+
+        </div>
+
+
+        
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
+          data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
+          data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+
+
+  
+
+    <script>
+      function openNav() {
+
+        document.getElementById("mySidenav").style.width = "350px";
+      }
+
+      function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+      }
+    </script>
+    <script src="./scripts/scripthome.js"></script>
+
+    <script src="./scripts/script.js"></script>
+
+
+
 </body>
+
 </html>

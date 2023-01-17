@@ -7,7 +7,7 @@ const connectLivereload=require('connect-livereload');
 const uuid = require('./helpers/uuid');
 const liveReloadServer=livereload.createServer();
 var publicdir=path.join(__dirname,'public');
-const {readAndAppend}=require('./helpers/util')
+const {readAndAppend, readFromFile}=require('./helpers/util')
 liveReloadServer.watch(publicdir)
 var routes=require('./routes/index')
 app.use(connectLivereload());
@@ -24,7 +24,8 @@ const io = require('socket.io')(server);
 
 
 var dataArr=[]
-var fs=require('fs')
+var fs=require('fs');
+const { json } = require('express');
 app.use(routes)
 app.use(express.static('public'));
 app.use(express.json())
@@ -96,12 +97,26 @@ readAndAppend(data,'./db/advice.json')
 res.json({message:"your advice has been added!!!Thanks"})
 
 })
+app.get('/project',(req,res)=>{
+
+  fs.readFile('./db/projects.json', 'utf8', (err, data) => {
+    if (err) {
+      console.error(err);
+    } else {
+      const parsedReviews = JSON.parse(data);
+      res.json(parsedReviews)
+    }
+  })
+})
+
+
 
 
 server.listen(PORT,()=>{
     console.log('listening')
     
 })
+
 
 var numberOfUsers = 0;
 

@@ -3,6 +3,9 @@ const emailEl=document.getElementById('emailId');
 const reviewEl=document.getElementById('reviewId');
 const rateEl=document.getElementById('rateId');
 
+
+
+
 const fetchData=(data)=>
     fetch('/api',{
         method:'POST',
