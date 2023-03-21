@@ -114,10 +114,7 @@ router.get('/project',(req,res)=>{
 
 
 
-server.listen(PORT,()=>{
-    console.log('listening')
-    
-})
+
 
 
 var numberOfUsers = 0;
@@ -174,3 +171,8 @@ io.on('connection', (socket) => {
 		}
 	});
 });
+
+app.listen(PORT,()=>{
+  console.log('listening')
+  
+})
