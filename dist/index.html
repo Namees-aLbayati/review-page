@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+    crossorigin="anonymous"></script>
+ <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>                       </head>                        <body>                        <i class='fa fa-github'></i>
+  <style>
+    #feedback {
+    max-width: 60%;
+    width: 100%;
+    margin: 10px auto;
+    padding: 20px;
+    border: solid 1px #f1f1f1;
+    background: #fbfbfb;
+    box-shadow: #e6e6e6 0 0 4px ;
+    border-radius: 0.25rem;
+  }
+
+  body {
+    font-family: "Lato", sans-serif;
+
+  }
+  .bodyEl{
+    background-color: #111;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+  }  
+  footer {
+    display: flex;
+    margin-top: 30px;
+    justify-content: space-between;
+        background: linear-gradient(to right, #f32170,
+        #ff6b08, #cf23cf, #eedd44);
+        color: white;
+      }
+  .sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+  }
+  .button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+  }
+  
+  .sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    background: linear-gradient(to right, #f32170,
+    #ff6b08, #cf23cf, #eedd44);
+-webkit-text-fill-color: transparent;
+-webkit-background-clip: text;
+    display: block;
+    transition: 0.3s;
+  }
+  
+  .sidenav a:hover {
+    color: #f1f1f1;
+  }
+  
+  .sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+  
+  @media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+  }
+  
+  @media (max-width: 720px) {
+    #feedback{
+      max-width: 90%;
+    }
+  }
+  
+  @media (max-width: 500px) {
+    #feedback{
+      padding: 10px;
+    }
+  }
+  
+  #fh2{
+   padding: 2px 15px;
+   color: #ff4d4d;
+   text-align: center;
+   
+   
+  }
+  
+  @media (max-width: 400px) {
+    #fh2{
+      font-size: 20px;
+    }
+  }
+  
+
+  
+  @media (max-width: 400px) {
+    #fh6{
+      font-size: 12px;
+    }
+  }
+  
+  .pinfo {
+   margin: 8px auto;
+   font-weight: bold;
+   line-height: 1.5;
+   color: #0d0d0d;
+  }
+  .form-group {
+    margin-bottom: 1rem;
+  }
+    
+  .form-control {
+    display: block;
+    width: 100%;
+    padding: 0.5rem 0.75rem;
+    font-size: 1rem;
+    line-height: 1.25;
+    font-weight: bold;
+    color: #6C6262;
+    background-color: #fff;
+    background-image: none;
+    -webkit-background-clip: padding-box;
+            background-clip: padding-box;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 0.25rem;
+    -webkit-transition: border-color ease-in-out 0.15s, -webkit-box-shadow ease-in-out 0.15s;
+    transition: border-color ease-in-out 0.15s, -webkit-box-shadow ease-in-out 0.15s;
+    -o-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+    transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+    transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s, -webkit-box-shadow ease-in-out 0.15s;
+  }
+  
+  .form-control::-ms-expand {
+    background-color: transparent;
+    border: 0;
+  }
+  
+  .form-control:focus {
+    color: #696060;
+    background-color: #fff;
+    border-color: #5cb3fd;
+    outline: none;
+  }
+  
+  .form-control::-webkit-input-placeholder {
+    color: #F34949;
+    opacity: 1;
+  }
+  
+  .form-control::-moz-placeholder {
+    color: brown;
+    opacity: 1;
+  }
+  
+  .form-control:-ms-input-placeholder {
+    color: blue;
+    opacity: 1;
+  }
+  
+  .form-control::placeholder {
+    color: white;
+    opacity: 1;
+  }
+  
+  .form-control:disabled, .form-control[readonly] {
+    background-color: red;
+    opacity: 1;
+  }
+  
+  .form-control:disabled {
+    cursor: not-allowed;
+  }
+  
+  select.form-control:not([size]):not([multiple]) {
+    height: calc(2.25rem + 2px);
+  }
+  
+  select.form-control:focus::-ms-value {
+    color: green;
+    background-color: #fff;
+  }
+  
+  .form-control-file,
+  .form-control-range {
+    display: block;
+  }
+  
+  .input-group {
+    position: relative;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+  }
+  
+  .input-group .form-control {
+    position: relative;
+    z-index: 2;
+    -webkit-box-flex: 1;
+    -webkit-flex: 1 1 auto;
+        -ms-flex: 1 1 auto;
+            flex: 1 1 auto;
+    width: 1%;
+    margin-bottom: 0;
+  }
+  
+  .input-group .form-control:focus, .input-group .form-control:active, .input-group .form-control:hover {
+    z-index: 3;
+  }
+  
+  .input-group-addon,
+  .input-group-btn,
+  .input-group .form-control {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  
+  .input-group-addon:not(:first-child):not(:last-child),
+  .input-group-btn:not(:first-child):not(:last-child),
+  .input-group .form-control:not(:first-child):not(:last-child) {
+    border-radius: 0;
+  }
+  
+  .input-group-addon,
+  .input-group-btn {
+    white-space: nowrap;
+    vertical-align: middle;
+  }
+  
+  .input-group-addon {
+    width: 45px;
+    padding: 0.5rem 0.75rem;
+    margin-bottom: 0;
+    font-size: 1rem;
+    font-weight: normal;
+    line-height: 1.25;
+    color: #2e2e2e;
+    text-align: center;
+    background-color: #eceeef;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 0.25rem;
+  }
+  
+  .input-group-addon.form-control-sm,
+  .input-group-sm > .input-group-addon,
+  .input-group-sm > .input-group-btn > .input-group-addon.btn {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.875rem;
+    border-radius: 0.2rem;
+  }
+  
+  .input-group-addon.form-control-lg,
+  .input-group-lg > .input-group-addon,
+  .input-group-lg > .input-group-btn > .input-group-addon.btn {
+    padding: 0.75rem 1.5rem;
+    font-size: 1.25rem;
+    border-radius: 0.3rem;
+  }
+  
+  .input-group-addon input[type="radio"],
+  .input-group-addon input[type="checkbox"] {
+    margin-top: 0;
+  }
+  
+  .input-group .form-control:not(:last-child),
+  .input-group-addon:not(:last-child),
+  .input-group-btn:not(:last-child) > .btn,
+  .input-group-btn:not(:last-child) > .btn-group > .btn,
+  .input-group-btn:not(:last-child) > .dropdown-toggle,
+  .input-group-btn:not(:first-child) > .btn:not(:last-child):not(.dropdown-toggle),
+  .input-group-btn:not(:first-child) > .btn-group:not(:last-child) > .btn {
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+  }
+  
+  .input-group-addon:not(:last-child) {
+    border-right: 0;
+  }
+  
+  .input-group .form-control:not(:first-child),
+  .input-group-addon:not(:first-child),
+  .input-group-btn:not(:first-child) > .btn,
+  .input-group-btn:not(:first-child) > .btn-group > .btn,
+  .input-group-btn:not(:first-child) > .dropdown-toggle,
+  .input-group-btn:not(:last-child) > .btn:not(:first-child),
+  .input-group-btn:not(:last-child) > .btn-group:not(:first-child) > .btn {
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+  }
+  
+  .form-control + .input-group-addon:not(:first-child) {
+    border-left: 0;
+  }
+  
+  .btn {
+    display: inline-block;
+    font-weight: normal;
+    line-height: 1.25;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    border: 1px solid transparent;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border-radius: 0.25rem;
+    -webkit-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .btn:focus, .btn:hover {
+    text-decoration: none;
+  }
+  
+  .btn:focus, .btn.focus {
+    outline: 0;
+    -webkit-box-shadow: 0 0 0 2px rgba(2, 117, 216, 0.25);
+            box-shadow: 0 0 0 2px rgba(2, 117, 216, 0.25);
+  }
+  
+  .btn.disabled, .btn:disabled {
+    cursor: not-allowed;
+    opacity: .65;
+  }
+  
+  .btn:active, .btn.active {
+    background-image: none;
+  }
+  
+  a.btn.disabled,
+  fieldset[disabled] a.btn {
+    pointer-events: none;
+  }
+  
+  .btn-primary {
+    color: #fff;
+    background-color: #0275d8;
+    border-color: #0275d8;
+  }
+  
+  .btn-primary:hover {
+    color: #fff;
+    background-color: #025aa5;
+    border-color: #01549b;
+  }
+  
+  .btn-primary:focus, .btn-primary.focus {
+    -webkit-box-shadow: 0 0 0 2px rgba(2, 117, 216, 0.5);
+            box-shadow: 0 0 0 2px rgba(2, 117, 216, 0.5);
+  }
+  
+  .btn-primary.disabled, .btn-primary:disabled {
+    background-color: #0275d8;
+    border-color: #0275d8;
+  }
+  
+  .btn-primary:active, .btn-primary.active,
+  .show > .btn-primary.dropdown-toggle {
+    color: #fff;
+    background-color: #025aa5;
+    background-image: none;
+    border-color: #01549b;
+  }
+  
+  </style>
+  <title>Namees ExpressJS</title>
+</head>
+
+<body class="bodyEl">
+
+  <header class="d-flex flex-column mb-3">
+
+ 
+
+
+
+
+    <h2 style="text-align:center;background: linear-gradient(to right, #f32170,
+  #ff6b08, #cf23cf, #eedd44);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;">Namees Albayati |  Full stack web developer </h2>
+    <p style="text-align:center;background: linear-gradient(to right, #f32170,
+  #ff6b08, #cf23cf, #eedd44);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;">Click on the element below to open the side navigation menu.</p>
+  </div>
+
+  <div>
+    <div id="mySidenav" class="sidenav">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <a href="/reviewpage">Add your review </a>
+      <a href="/advice">Developers Advices</a>
+      <a href="/chat">Chat</a>
+      
+    </div>
+    <span style="font-size:30px;cursor:pointer;background: linear-gradient(to right, #f32170,
+#ff6b08, #cf23cf, #eedd44);
+-webkit-text-fill-color: transparent;
+-webkit-background-clip: text;" onclick="openNav()">&#9776; More </span>
+
+</div>
+
+
+
+  <p style="color: white;text-align: center;
+  text-shadow: 1px 1px 2px grey, 0 0 25px blue, 0 0 5px darkblue;" class="mt-5 align-item-center">
+    A full stack web developer based in Austin Texas. Passionate about building software that is meaningful and can improve our lives. Have a Bachlor's  degree in Information Technology | Communication Engineering and 1 years of previous experience as a Testing Engineer Focused on Finding a software's  functionality Bugs to optimizing efficiency.  I have earned a certificate in full stack web development from the University of Washington on May 2021, from which I gained knowledge and critical skills needed to build dynamic web applications and deploy them. Have worked on technologies like HTML5, CSS3, JavaScript,bootstrap, jQuery,Node.js,express.js, MySQL, MongoDB, Heroku, Express.js, React.js,npm packages. I am eager to utilize my technical skills and my strengths like problem solving, perseverance, planning and organization, and the ability to work well in a diverse team environment on every project I work on.
+    <i class='fab fa-github bg-light'></i>
+  </p>
+ 
+
+
+</header>
+
+
+
+    
+
+<div id="carouselExampleAutoplaying" class="carousel slide w-50 d-flex " 
+        data-bs-ride="carousel" style="height: 50vh;position: relative;left: 400px;">
+
+
+        <div class="carousel-inner"  id="container">
+
+
+         <div class="carousel-item active  " >
+
+        
+          </div>  
+
+          </a>
+
+        </div>
+
+
+        
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
+          data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
+          data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+
+  
+
+    <script>
+      function openNav() {
+
+        document.getElementById("mySidenav").style.width = "350px";
+      }
+
+      function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+      }
+      const carsoulContainr=document.getElementById('container');
+function createCar(data){
+    console.log('fun',data.description)
+const div1=document.createElement('div');
+var link=document.createElement('a')
+const icon=document.createElement('p');
+icon.innerHTML = `<a href='${data.github}'><i class='fab fa-github 'style='font-size:36px;color:white;' ></i></a> <a href='${data.url}'><i class='fas fa-eye' style='font-size:48px;color:white'></i></a>`;
+
+link.setAttribute('href',data.github)
+link.setAttribute('style','outline: none;border: 0;')
+div1.classList.add('carousel-item','add')
+
+const image=document.createElement('img');
+
+image.src=`/images/${data.image}`;
+image.classList.add('d-block','w-100','h-100')
+
+const div2=document.createElement('div');
+div2.classList.add("carousel-caption","d-none","d-md-block")
+div2.setAttribute('style','margin-bottom:100px;height:10px;')
+var head5=document.createElement('h4');
+head5.setAttribute('href',data.github)
+head5.textContent=data.name
+
+var paragraph=document.createElement('h6');
+paragraph.textContent=data.description
+paragraph.setAttribute('style','color: yellow;font-size:small')
+head5.appendChild(link)
+div2.appendChild(icon)
+
+div2.appendChild(paragraph)
+div2.appendChild(head5)
+
+div1.appendChild(image)
+
+div1.appendChild(div2)
+
+carsoulContainr.appendChild(div1)
+}
+const getData=()=>
+fetch('/project',{
+    method:'GET'
+}).then((data)=>data.json()).then((result)=>{
+for(var i=0;i<result.length;i++){
+    createCar(result[i])
+}
+})
+
+getData()
+
+{/* <div class="carousel-item active">
+            <img src="#" class="d-block w-100 h-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>First slide label</h5>
+              <p>Some representative placeholder content for the first slide.</p>
+            </div>
+          </div> */}
+          const nameEl=document.getElementById('nameId');
+const emailEl=document.getElementById('emailId');
+const reviewEl=document.getElementById('reviewId');
+const rateEl=document.getElementById('rateId');
+
+
+
+
+const fetchData=(data)=>
+    fetch('/api',{
+        method:'POST',
+        headers:{
+            'Content-Type': 'application/json',
+        },
+        body:JSON.stringify(data),
+
+    }).then((res)=>{
+ return res.json()}).then((data)=>{
+return data}).catch((err)=>{
+    throw err
+})
+
+document.getElementById('submitId').addEventListener('click',(e)=>{
+   e.preventDefault()
+    var userData={
+        name:nameEl.value.trim(),
+        email:emailEl.value.trim(),
+        rate:rateEl.value.trim(),
+        review:reviewEl.value.trim()
+
+    }
+  fetchData(userData).then((d)=>{
+    console.log(d.id)
+window.alert(`ID: ${d.id} has been added to your review,your review will be so helpful to improve our products!!!Thanks! `)  }).catch((err)=>{
+    console.log(err)
+  })
+
+
+})
+
+    </script>
+
+
+    <footer>
+      <div style="font-size:30px ;">
+        <a href="tel:+17372887235" style="color:white">
+<i class='fas fa-phone' ></i></a>
+<a href="http://www.linkedin.com/in/namees-albayate-604005227">
+<i class='fa fa-linkedin' style='color: white'></i></a>
+
+        <a href="https://github.com/Namees-aLbayati" style="color: white">
+<i class='fa fa-github'></i></a>
+        
+<a href="mailto:nameesmohammed12@gmail.com" style="color:white">
+<i class='fas fa-at' ></i></a>
+
+
+      </div>
+      <div >
+        <h4 style="font-family: Didot;">Namees Mo. Albayati</h4><br>
+      
+      </div>
+      <div>
+        USA Austin,Texas,78705<br>
+        <a href='tel:+17372887235'>
+          +17372887235
+        </a>
+      </div>
+     
+    </footer>
+
+    
+</body>
+
+</html>

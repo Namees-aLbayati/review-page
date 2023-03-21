@@ -46,7 +46,7 @@ const getData=()=>{
 
 const postData=(data)=>{
 console.log('post data js',data)
-    fetch('/api/ad',{
+    fetch('/try',{
         method:'POST',
         headers:{
             'Content-Type':'application/json'
