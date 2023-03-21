@@ -6,14 +6,14 @@ const path=require('path')
 const router=express.Router()
 const livereload=require('livereload');
 const connectLivereload=require('connect-livereload');
-const uuid = require('../helpers/uuid');
+const uuid = require('./helpers/uuid');
 const bodyParser = require("body-parser"); 
 router.use(bodyParser.json());
 const liveReloadServer=livereload.createServer();
-var publicdir=path.join(__dirname,'../dist')
-const {readAndAppend, readFromFile}=require('../helpers/util')
+var publicdir=path.join(__dirname,'./dist')
+const {readAndAppend, readFromFile}=require('./helpers/util')
 liveReloadServer.watch(publicdir)
-var routes=require('../routes/index.js')
+var routes=require('./routes/index.js')
 app.use(connectLivereload());
 function topic(){
   var a=["UI",'UX']
@@ -31,7 +31,7 @@ app.use(express.static(publicdir));
 app.use(express.json())
 app.use(express.urlencoded({extended:true}));
 router.get('/',(req,res)=>{
-    res.sendFile(path.join(__dirname,'../dist/index.html'))
+    res.sendFile(path.join(__dirname,'./dist/index.html'))
 })
 router.post('/api',(req,res)=>{
 
@@ -55,7 +55,7 @@ const newReview={
 
       // Write updated reviews back to the file
       fs.writeFile(
-        '../db/reviews.json',
+        './db/reviews.json',
         JSON.stringify(parsedReviews, null, 4),
         (writeErr) =>
           writeErr
@@ -75,14 +75,14 @@ const newReview={
     });
 })
 router.get('/reviewpage',(req,res)=>{
-  console.log(path.join(__dirname,('../dist/pages/review.html')))
-  res.sendFile(path.join(__dirname,('../dist/pages/review.html')))
+  console.log(path.join(__dirname,('./dist/pages/review.html')))
+  res.sendFile(path.join(__dirname,('./dist/pages/review.html')))
 })
 router.get('/chat',(req,res)=>{
-  res.sendFile(path.join(__dirname,('../dist/pages/chat.html')))
+  res.sendFile(path.join(__dirname,('./dist/pages/chat.html')))
 })
 router.get('/advice',(req,res)=>{
-  res.sendFile(path.join(__dirname,('../dist/pages/advices.html')))
+  res.sendFile(path.join(__dirname,('./dist/pages/advices.html')))
 })
 router.post('/try',(req,res)=>{
 
@@ -94,14 +94,14 @@ router.post('/try',(req,res)=>{
       topic:topic()
     }
    
-readAndAppend(data,'../db/advice.json')
+readAndAppend(data,'./db/advice.json')
 res.json({message:"your advice has been added!!!Thanks"})
 
 })
 router.get('/project',(req,res)=>{
   
 
-  fs.readFile('../db/projects.json', 'utf8', (err, data) => {
+  fs.readFile('./db/projects.json', 'utf8', (err, data) => {
     if (err) {
       console.error(err);
     } else {
@@ -174,5 +174,3 @@ io.on('connection', (socket) => {
 		}
 	});
 });
-app.use('/.netlify/functions/server',router);
-module.exports.handler=serverless(app)
