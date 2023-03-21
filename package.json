@@ -1,6 +1,9 @@
 {
   "name": "update-profile",
   "version": "1.0.0",
+  "engine": {
+    "node": "16.x"
+  },
   "description": "",
   "main": "server.js",
   "dependencies": {
